@@ -1,13 +1,14 @@
-﻿using Dalamud.Plugin.Services;
+using Dalamud.Plugin.Services;
 
 namespace AudibleCharacterStatus
 {
     internal static class Service
     {
-        internal static IClientState ClientState;
-        internal static IFramework Framework;
-        internal static Configuration Config;
-        internal static ICondition Condition;
-        internal static IPluginLog PluginLog;
+        internal static IClientState ClientState = null!;
+        internal static IFramework Framework = null!;
+        internal static Configuration Config = null!;
+        internal static ICondition Condition = null!;
+        internal static IPluginLog PluginLog = null!;
+        internal static IObjectTable ObjectTable = null!;
     }
 }
