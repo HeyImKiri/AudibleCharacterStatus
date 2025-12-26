@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Dalamud.Game.ClientState.Conditions;
 
 namespace AudibleCharacterStatus
@@ -19,7 +19,7 @@ namespace AudibleCharacterStatus
 
         private static void LowHpTimer()
         {
-            var localPlayer = Service.ClientState.LocalPlayer;
+            var localPlayer = Service.ObjectTable.LocalPlayer;
             if (localPlayer is null) return;
 
             if (!Service.Config.LowHealthSoundEnabled) return;
@@ -42,7 +42,7 @@ namespace AudibleCharacterStatus
 
         private static void LowMpTimer()
         {
-            var localPlayer = Service.ClientState.LocalPlayer;
+            var localPlayer = Service.ObjectTable.LocalPlayer;
             if (localPlayer is null) return;
             if (Process.GetCurrentProcess().Id != ProcessUtils.GetForegroundProcessId()) return;
 
