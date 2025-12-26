@@ -1,4 +1,4 @@
-﻿using AudibleCharacterStatus.Attributes;
+using AudibleCharacterStatus.Attributes;
 using AudibleCharacterStatus.Windows;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
@@ -23,13 +23,15 @@ namespace AudibleCharacterStatus
             IFramework framework,
             IClientState clientState,
             ICondition condition,
-            IPluginLog pluginLog)
+            IPluginLog pluginLog,
+            IObjectTable objectTable)
         {
             this.pluginInterface = pi;
             Service.ClientState = clientState;
             Service.Framework = framework;
             Service.Condition = condition;
             Service.PluginLog = pluginLog;
+            Service.ObjectTable = objectTable;
 
             // Get or create a configuration object
             Service.Config = (Configuration)this.pluginInterface.GetPluginConfig() ?? new Configuration();
